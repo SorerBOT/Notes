@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+
+\section{Equality of Sets}
+Theorems:
+
+\begin{proof}
+
+$L_1 \times (L_2 \cup L_3) \equiv (L_1 \times L_2) \cup (L_1 \times L_3)$
+\\
+\\
+The proof will be divided into two parts. the first will show that: \newline
+$L_1 \times (L_2 \cup L_3) \subseteq (L_1 \times L_2) \cup (L_1 \times L_3)$ \newline
+\\
+\\
+And the second that: \newline
+$(L_1 \times L_2) \cup (L_1 \times L_3) \subseteq L_1 \times (L_2 \cup L_3)$ \newline
+\\
+\\
+Proof: \newline
+let $w \in L_1 \times (L_2 \cup L_3)$ \newline
+\\
+  Concatenation definition: \newline 
+  $\Longrightarrow \exists y,z \in \Sigma^{*} \mid w = yz ~and~ (y \in L_1) \wedge (z \in (L_2 \cup L_3))$ \newline
+  Union definition: \newline 
+  $\Longrightarrow \exists y,z \in \Sigma^{*} \mid w = yz ~and~ (y \in L_1) \wedge (z \in L_2 \vee z \in L_3)$ \newline
+  Distribution definition: \newline
+  $\Longrightarrow \exists y,z \in \Sigma^{*} \mid w = yz ~and ~ (y \in L_1 \wedge z \in L_2) \vee (y \in L_1 \wedge z \in L_3)$ \newline
+  Concatenation definition: \newline
+  $\Longrightarrow w \in L_1 \times L_2 \vee w \in L_1 \times L_3$ \newline
+  Union definition: \newline
+  $\Longrightarrow w \in (L_1 \times L_2) \cup (L_1 \times L_3))$ \newline
+  Subset definition: \newline 
+  $\Longrightarrow L_1 \times (L_2 \cup L_3) \subseteq (L_1 \times L_2) \cup (L_1 \times L_3)$
+  \\
+  \\
+  Let $w \in (L_1 \times L_2) \cup (L_1 \times L_3)$ \newline
+\\
+Union definition: \newline
+  $\Longrightarrow w \in (L_1 \times L_2) \vee w \in (L_1 \times L_3)$ \newline
+Concatenation definition: \newline
+  $\Longrightarrow \exists y,z \in \Sigma^{*} \mid w = yz ~and~ (y \in L_1 \wedge z \in L_2) \vee (y \in L_1 \wedge z \in L_3)$ \newline
+Union definition: \newline
+  $\Longrightarrow \exists y,z \in \Sigma^{*} \mid w = yz ~and~ (y \in L_1 \wedge z \in (L_2 \cup L_3))$ \newline
+Concatenation definition: \newline
+  $\Longrightarrow w \in L_1 \times (L_2 \cup L_3)$ \newline
+Subset definition: \newline
+  $\Longrightarrow (L_1 \times L_2) \cup (L_1 \times L_3) \subseteq (L_1 \times (L_2 \cup L_3))$ \newline
+Group equality definition: \newline
+$\Longrightarrow L_1 \times (L_2 \cup L_3) \equiv (L_1 \times L_2) \cup (L_1 \times L_3)$ \newline
+
+\end{proof}
+\begin{proof}
+  $L_1^{*} \cup L_2^{*}(L_1 \cap L_2)^{*} \subseteq (L_1 \cup L_2)^{*}$ \newline
+\\
+  $~let~ w \in L_1^{*} \cup L_2^{*}(L_1 \cap L_2)^{*}$ \newline
+  $~let~ t \in (L_1 \cup L_2)^{*}$ \newline
+\\
+  Definition of union: \newline
+  $\Longrightarrow w \in L_1^{*} \vee w \in L_2^{*}(L_1 \cap L_2)^{*}$
+
+
+  Differenciating possible circumstances: \newline
+  Assume: $w \in L_1^{*}$ \newline
+\\
+It would be sufficient for such circumstances to prove that: \newline
+  $w \in (L_1 \cup L_2)^{*}$ \newline
+\\
+Proof: \newline
+  $w \in L_1^{*}$ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow w = w_1 \circ w_2 \circ \ldots \circ w_n \mid w_{1,2, \ldots, n} \in L_1$ \newline
+  Definition of Union: \newline
+  $\Longrightarrow w_{1,2, \ldots, n} \in L_1 \cup L_2$ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow w_1 \circ w_2 \circ \ldots \circ w_n \in (L_1 \cup L_2)^{*} $ \newline
+  Definition of w: \newline
+  $\Longrightarrow w \in (L_1 \cup L_2)^{*} $ \newline
+\\
+  Assume: $w \in L_2^{*}(L_1 \cap L_2)^{*}$ \newline
+  \\
+  It would be sufficient for such circumstances to prove that: \newline
+  $w \in (L_1 \cup L_2)^{*}$ \newline
+  Definition of Concatenation: \newline
+  $\Longrightarrow \exists y \in L_2^{*} \exists z \in (L_1 \cap L_2)^{*} \mid w = yz$ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow z = z_1 \circ z_2 \circ \ldots \circ z_n \mid z_{1,2, \ldots, n} \in (L_1 \cap L_2)$ \newline
+  Definition of Intersection: \newline
+  $\Longrightarrow z_{1,2, \ldots, n} \in L_2$ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow z \in L_2^{*}$ \newline
+  Definition of z: \newline
+  $\Longrightarrow \exists y \in L_2^{*} \exists z \in L_2^{*} \mid w = yz$ \newline
+  $\Longrightarrow \exists y,z \in L_2^{*} \mid w = yz$ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow w \in L_2^{*}$ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow w = w_1 \circ w_2 \circ \ldots \circ w_n | w_{1,2, \ldots, n} \in L_2$ \newline
+  Definition of Union: \newline
+  $w_{1,2, \ldots, n} \in L_1 \cup L_2 $ \newline
+  Definition of Kleene Star: \newline
+  $\Longrightarrow w_1 \circ w_2 \circ \ldots \circ w_n \in (L_1 \cup L_2)^{*} $ \newline
+  Definition of w: \newline
+  $\Longrightarrow w \in (L_1 \cup L_2)^{*} $ \newline
+
+  Proven for all possible circumstances.
+  
+
+
+
+\end{proof}
+\end{document}
