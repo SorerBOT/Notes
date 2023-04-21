@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  21 APR 2023 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  21 APR 2023 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -473,7 +473,7 @@ Overfull \hbox (4.55676pt too wide) in paragraph at lines 256--302
 Here is how much of TeX's memory you used:
  13217 strings out of 475071
  284088 string characters out of 5778915
- 648027 words of memory out of 5000000
+ 648022 words of memory out of 5000000
  34425 multiletter control sequences out of 15000+600000
  472907 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -491,7 +491,7 @@ cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm
 r7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb>
-Output written on Automata.pdf (7 pages, 154101 bytes).
+Output written on Automata.pdf (7 pages, 154102 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
