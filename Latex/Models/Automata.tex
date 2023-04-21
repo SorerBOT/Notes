@@ -156,4 +156,28 @@ $A = (\{q_{even}, q_{odd}, q_{fail}\}, \{a,b\}, \delta, \{x = wyz \mid w,z \in \
     (q_1) edge node {$\sigma \in \Sigma$} (q_2)
     (q_2) edge node {$\sigma \in \Sigma$} (q_0);
 \end{tikzpicture}
+\subsection{Only accept words which have a length such that it returns 1 when paired with modulu 3:}
+\begin{tikzpicture}
+  \node [state, initial] (q_{start}) {$q_{start}$};
+  \node [state] [above=of q_{start}] (q_0) {$q_0$};
+  \node [state, accepting] (q_1) [below left=of q_{start}] {$q_1$};
+  \node [state] (q_2) [below right=of q_{start}] {$q_2$};
+    \path[->]
+    (q_{start}) edge node {$\sigma \in \Sigma$} (q_1)
+    (q_0) edge node {$\sigma \in \Sigma$} (q_1)
+    (q_1) edge node {$\sigma \in \Sigma$} (q_2)
+    (q_2) edge node {$\sigma \in \Sigma$} (q_0);
+\end{tikzpicture}
+\subsection{Only accept words which have a length such that it does not return 1 when paired with modulu 3:}
+\begin{tikzpicture}
+  \node [state, initial] (q_{start}) {$q_{start}$};
+  \node [state, accepting] [above=of q_{start}] (q_0) {$q_0$};
+  \node [state] (q_1) [below left=of q_{start}] {$q_1$};
+  \node [state, accepting] (q_2) [below right=of q_{start}] {$q_2$};
+    \path[->]
+    (q_{start}) edge node {$\sigma \in \Sigma$} (q_1)
+    (q_0) edge node {$\sigma \in \Sigma$} (q_1)
+    (q_1) edge node {$\sigma \in \Sigma$} (q_2)
+    (q_2) edge node {$\sigma \in \Sigma$} (q_0);
+\end{tikzpicture}
 \end{document}  
