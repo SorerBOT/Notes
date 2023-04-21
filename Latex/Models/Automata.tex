@@ -180,4 +180,52 @@ $A = (\{q_{even}, q_{odd}, q_{fail}\}, \{a,b\}, \delta, \{x = wyz \mid w,z \in \
     (q_1) edge node {$\sigma \in \Sigma$} (q_2)
     (q_2) edge node {$\sigma \in \Sigma$} (q_0);
 \end{tikzpicture}
+\subsection{Only accept words which begin with 5 consecutive ba's and end with an abb:}
+\begin{tikzpicture}
+  \node [state, initial] (q_0) {$q_0$};
+  \node [state] [right=of q_0] (q_{fail}) {$q_{fail}$};
+  \node [state] [below=of q_0] (q_b) {$q_b$};
+  \node [state] [right=of q_b] (q_a) {$q_a$};
+  \node [state] [below=of q_a] (q_{b_2}) {$q_{b_2}$};
+  \node [state] [right=of q_{b_2}] (q_{a_2}) {$q_{a_2}$};
+  \node [state] [below=of q_{a_2}] (q_{b_3}) {$q_{b_3}$};
+  \node [state] [right=of q_{b_3}] (q_{a_3}) {$q_{a_3}$};
+  \node [state] [below=of q_{a_3}] (q_{b_4}) {$q_{b_4}$};
+  \node [state] [right=of q_{b_4}] (q_{a_4}) {$q_{a_4}$};
+  \node [state] [below=of q_{a_4}] (q_{b_5}) {$q_{b_5}$};
+  \node [state] [right=of q_{b_5}] (q_{abb_{a}}) {$q_{abb_{a}}$};
+  \node [state] [right=of q_{abb_{a}}] (q_{abb_{b}}) {$q_{abb_{b}}$};
+  \node [state, accepting] [right=of q_{abb_{b}}] (q_{abb_{b_{2}}}) {$q_{abb_{b_{2}}}$};
+  \node [state] [below=of q_{abb_{b}}] (q_{abb_{0}}) {$q_{abb_{0}}$};
+    \path[->]
+    (q_0) edge node [above] {a} (q_{fail})
+    (q_0) edge node [left] {b} (q_b)
+    (q_{fail}) edge [loop right] node [right] {{a,b}} ()
+    (q_b) edge node [above] {b} (q_{fail})
+    (q_b) edge node [above] {a} (q_a)
+    (q_a) edge node [left] {b} (q_{b_2})
+    (q_a) edge node [right] {a} (q_{fail})
+    (q_{b_2}) edge [bend right] node [below right] {b} (q_{fail})
+    (q_{b_2}) edge node [above] {a} (q_{a_2})
+    (q_{a_2}) edge node [left] {b} (q_{b_3})
+    (q_{a_2}) edge [bend right] node [right] {a} (q_{fail})
+    (q_{b_3}) edge [bend right=50] node [below right] {b} (q_{fail})
+    (q_{b_3}) edge node [above] {a} (q_{a_3})
+    (q_{a_3}) edge node [left] {b} (q_{b_4})
+    (q_{a_3}) edge [bend right] node [right] {a} (q_{fail})
+    (q_{b_4}) edge [bend right=50] node [below right] {b} (q_{fail})
+    (q_{b_4}) edge node [above] {a} (q_{a_4})
+    (q_{a_4}) edge node [left] {b} (q_{b_5})
+    (q_{a_4}) edge [bend right] node [right] {a} (q_{fail})
+    (q_{b_5}) edge [bend right=50] node [below right] {b} (q_{fail})
+    (q_{b_5}) edge node [above] {a} (q_{abb_{a}})
+    (q_{abb_{a}}) edge node [above] {b} (q_{abb_{b}})
+    (q_{abb_{a}}) edge [loop below] node [below] {a} ()
+    (q_{abb_{b}}) edge [bend left] node [below] {a} (q_{abb_{a}})
+    (q_{abb_{b}}) edge node [above] {b} (q_{abb_{b_{2}}})
+    (q_{abb_{b_{2}}}) edge [bend left] node [above] {a} (q_{abb_{a}})
+    (q_{abb_{b_{2}}}) edge node [below] {b} (q_{abb_{0}})
+    (q_{abb_{0}}) edge [loop below] node [below] {b} ()
+    (q_{abb_{0}}) edge node [below] {a} (q_{abb_{a}});
+\end{tikzpicture}
 \end{document}  
