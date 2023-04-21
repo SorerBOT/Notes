@@ -252,4 +252,51 @@ $A = (\{q_{even}, q_{odd}, q_{fail}\}, \{a,b\}, \delta, \{x = wyz \mid w,z \in \
     (q_5) edge node [below] {b} (q_6)
     (q_6) edge [loop below] node [below] {{a,b}} ();
 \end{tikzpicture}
+\subsection{Only accept words of the following form: $a^{i}b^{j} \mid i \bmod 4 = j \bmod 3$}
+Additional traps should be set in case `a` is received as input after moving to the j section, though I had already built a structure that would make such alternations difficult. \newline 
+  \begin{tikzpicture}
+    \node [state, initial, accepting] (start) {$start$};
+    \node [state] [right=of start] (trap) {$trap$};
+    \node [state] [above right=of trap] (i_0) {$i_0$};
+    \node [state] [right=of i_0] (i_1) {$i_1$};
+    \node [state] [right=of i_1] (i_2) {$i_2$};
+    \node [state] [right=of i_2] (i_3) {$i_3$};
+    \node [state, accepting] [below=of i_0] (j_{0_{0}}) {$j_{0}$};
+    \node [state] [below=of j_{0_{0}}] (j_{1_{0}}) {$j_{1}$};
+    \node [state] [below=of j_{1_{0}}] (j_{2_{0}}) {$j_{2}$};
+    \node [state] [below=of i_1] (j_{0_{1}}) {$j_{0}$};
+    \node [state, accepting] [below=of j_{0_{1}}] (j_{1_{1}}) {$j_{1}$};
+    \node [state] [below=of j_{1_{1}}] (j_{2_{1}}) {$j_{2}$};
+    \node [state] [below=of i_2] (j_{0_{2}}) {$j_{0}$};
+    \node [state] [below=of j_{0_{2}}] (j_{1_{2}}) {$j_{1}$};
+    \node [state, accepting] [below=of j_{1_{2}}] (j_{2_{2}}) {$j_{2}$};
+    \node [state] [below=of i_3] (i3trap) {$trap$};
+    \path[->]
+      (start) edge node [above] {a} (i_0)
+      (start) edge node [above] {b} (trap)
+      (i_0) edge node [above] {a} (i_1)
+      (i_0) edge [bend left] node [right] {b} (j_{1_{0}})
+      (i_1) edge node [above] {a} (i_2)
+      (i_1) edge [bend left] node [right] {b} (j_{1_{1}})
+      (i_2) edge node [above] {a} (i_3)
+      (i_2) edge [bend left] node [right] {b} (j_{1_{2}})
+      (i_3) edge [bend right] node [above] {a} (i_0)
+      (i_3) edge [bend left] node [right] {b} (i3trap)
+      
+      (j_{0_{0}}) edge node [left] {b} (j_{1_{0}})
+      (j_{1_{0}}) edge node [left] {b} (j_{2_{0}})
+      (j_{2_{0}}) edge [bend left] node [left] {b} (j_{0_{0}})
+
+      (j_{0_{1}}) edge node [left] {b} (j_{1_{1}})
+      (j_{1_{1}}) edge node [left] {b} (j_{2_{1}})
+      (j_{2_{1}}) edge [bend left] node [left] {b} (j_{0_{1}})
+
+      (j_{0_{2}}) edge node [left] {b} (j_{1_{2}})
+      (j_{1_{2}}) edge node [left] {b} (j_{2_{2}})
+      (j_{2_{2}}) edge [bend left] node [left] {b} (j_{0_{2}})
+      
+      (trap) edge [loop below] node {{a,b}} () 
+      (i3trap) edge [loop below] node {{a,b}} ()
+    ;
+  \end{tikzpicture}
 \end{document}  
