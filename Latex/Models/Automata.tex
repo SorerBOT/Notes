@@ -228,4 +228,28 @@ $A = (\{q_{even}, q_{odd}, q_{fail}\}, \{a,b\}, \delta, \{x = wyz \mid w,z \in \
     (q_{abb_{0}}) edge [loop below] node [below] {b} ()
     (q_{abb_{0}}) edge node [below] {a} (q_{abb_{a}});
 \end{tikzpicture}
+\subsection{Only accept words which contain the letter a at least twice and no more than 1 of the letter b:}
+\begin{tikzpicture}
+  \node [state, initial] (q_0) {$q_0$};
+  \node [state] [right=of q_0] (q_1) {$q_1$};
+  \node [state, accepting] [right=of q_1] (q_2) {$q_2$};
+  \node [state] [below=of q_0] (q_3) {$q_3$};
+  \node [state] [right=of q_3] (q_4) {$q_4$};
+  \node [state, accepting] [right=of q_4] (q_5) {$q_5$};
+  \node [state] [below=of q_4] (q_6) {$q_6$};
+    \path[->]
+    (q_0) edge node [above] {a} (q_1)
+    (q_0) edge node [left] {b} (q_3)
+    (q_1) edge node [above] {a} (q_2)
+    (q_1) edge node [left] {b} (q_4)
+    (q_2) edge [loop right] node [right] {a} ()
+    (q_2) edge node [left] {b} (q_5)
+    (q_3) edge node [above] {a} (q_4)
+    (q_3) edge node [below] {b} (q_6)
+    (q_4) edge node [above] {a} (q_5)
+    (q_4) edge node [left] {b} (q_6)
+    (q_5) edge [loop right] node [right] {a} ()
+    (q_5) edge node [below] {b} (q_6)
+    (q_6) edge [loop below] node [below] {{a,b}} ();
+\end{tikzpicture}
 \end{document}  
