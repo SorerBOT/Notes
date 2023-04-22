@@ -436,7 +436,14 @@ Automata C: \newline
     ;
 \end{tikzpicture} \newline
 \\
+\subsubsection{Propose a possible formal automata to match the diagram}
 My supposition of L(A) to match the automata at hand: \newline
-$L(A) = \{w \in \{a,b\}^{*} \mid (\#a_w \bmod 3) + (\#b_w \bmod 2) = 2\}$
-
+$L(A) = \{w \in \{a,b\}^{*} \mid (\#a_w \bmod 3) + (\#b_w \bmod 2) = 2\}$ \newline
+\subsubsection{What alternation to the diagram must one perform in order for the automata at hand to be the following:}
+\paragraph{$\{w \in \{a,b\}^{*} \mid (\#a_w \bmod 3) = (\#b_w \bmod 2)\}$:}
+The set of accepted states must be altered to the following: \newline
+$F^{C} = \{q_0, q_4\}$ \newline
+\paragraph{$\{w \in \{a,b\}^{*} \mid ((\#a_w - 1) \bmod 3) + (\#b_w \bmod 2) = 2\}$:}
+The set of accepted states must be altered to the following: \newline
+$F^{C} = \{q_0, q_5\}$ \newline
 \end{document}  

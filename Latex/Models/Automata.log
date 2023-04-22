@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  22 APR 2023 16:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  22 APR 2023 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,20 +505,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--415
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 437--441
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
 
  []
 
-[9] (./Automata.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--446
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
+
+ []
+
+[10] (./Automata.aux) ) 
 Here is how much of TeX's memory you used:
- 13312 strings out of 475071
- 285780 string characters out of 5778915
- 648681 words of memory out of 5000000
- 34520 multiletter control sequences out of 15000+600000
- 472907 words of font info for 40 fonts, out of 8000000 for 9000
+ 13320 strings out of 475071
+ 285913 string characters out of 5778915
+ 648683 words of memory out of 5000000
+ 34527 multiletter control sequences out of 15000+600000
+ 473215 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,9n,104p,426b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/am
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
@@ -531,10 +552,10 @@ mr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 
-Output written on Automata.pdf (9 pages, 166399 bytes).
+Output written on Automata.pdf (10 pages, 182724 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
