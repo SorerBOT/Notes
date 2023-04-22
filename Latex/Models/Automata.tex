@@ -317,4 +317,50 @@ $A = (\{q_0, q_1, q_2, q_3, q_4\}, \{a, b\}, \delta, {\{q_0, q_1, q_2\}})$ \newl
 
       ;
 \end{tikzpicture}
+\subsection{Given A,B automatas above abc $\{a,b\}$ build an autumata  C which accepts the language $L(A) \cap L(B)$}
+
+
+Automata A: \newline
+\\
+\begin{tikzpicture}
+  \node [state, initial, accepting] (q_0) {$q_0$};
+  \node [state] [right=of q_0] (q_1) {$q_1$};
+    \path[->]
+      (q_0) edge [bend left] node [above] {b} (q_1)
+      (q_0) edge [loop below] node [below] {a} ()
+      (q_1) edge [bend left] node [below] {b} (q_0)
+      (q_1) edge [loop below] node [below] {a} ()
+    ;
+\end{tikzpicture} \newline
+Automata B: \newline
+\\
+\begin{tikzpicture}
+  \node [state, initial] (p_0) {$p_0$};
+  \node [state, accepting] [right=of p_0] (p_1) {$p_1$};
+    \path[->]
+      (p_0) edge [bend left] node [above] {a} (p_1)
+      (p_0) edge [loop below] node [below] {b} ()
+      (p_1) edge [bend left] node [below] {a} (p_0)
+      (p_1) edge [loop below] node [below] {b} ()
+    ;
+\end{tikzpicture} \newline
+Automata C: \newline
+\\
+\begin{tikzpicture}
+  \node [state, initial] (q_0p_0) {$q_0p_0$};
+  \node [state, accepting] [right=of q_0p_0] (q_0p_1) {$q_0p_1$};
+  \node [state] [below=of q_0p_0] (q_1p_0) {$q_1p_0$};
+  \node [state] [right=of q_1p_0] (q_1p_1) {$q_1p_1$};
+    \path[->]
+    (q_0p_0) edge [bend left] node [above] {a} (q_0p_1)
+    (q_0p_0) edge [bend right] node [left] {b} (q_1p_0)
+    (q_1p_0) edge [bend right] node [right] {b} (q_0p_0)
+    (q_1p_0) edge [bend right] node [below] {a} (q_1p_1)
+    (q_0p_1) edge [bend left] node [below] {a} (q_0p_0)
+    (q_0p_1) edge [bend left] node [right] {b} (q_1p_1)
+    (q_1p_1) edge [bend right] node [above] {a} (q_1p_0)
+    (q_1p_1) edge [bend left] node [left] {b} (q_0p_1)
+    ;
+\end{tikzpicture}
+
 \end{document}  
