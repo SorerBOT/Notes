@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+
+\section{Regularity of Zigzag}
+\begin{proof}
+$Zigzag (L_1,L2) = \left\{ w|w=a_1b_1a_2b_2...a_nb_n,\: such\: that \:a_1...a_n \in L_1\:and \:  b_1...b_n \in L_2  \right\}$ \newline
+\\
+Let A, B be finite deterministic automatas defined the following way: \newline
+$A = (Q^{A}, \Sigma, \delta^{A}, q_0^{A}, F^{A})$ \newline
+$B = (Q^{B}, \Sigma, \delta^{B}, q_0^{B}, F^{B})$ \newline
+\\
+Let $L_1, L_2$ be two regular languages, accepted by A,B correspondingly, such that: \newline
+$L(A) = L_1$ \newline
+$L(B) = L_2$ \newline
+\\
+Let there be a new automata C, defined as follows: \newline
+$C = (Q^{C}, \Sigma, \delta^{C}, q_0^{C}, F^{C})$ \newline
+Let $L_3$ be a language, we shall prove its regularity by proving C to be a finite deterministic automata. \newline
+\\*
+To prove C to be a finite deterministic automata, we shall prove that: \newline
+\begin{itemize}
+
+\item $\lvert Q^{C} \rvert \ne \infty$ \newline
+\item That we have a valid transition function: $\delta^{C} : Q^{C} \times \Sigma \rightarrow Q^{C}$ \newline
+\item A valid initial state: $q_0^{C}$ \newline
+\item A valid set of accept states: $F^{C}$ \newline
+\end{itemize}
+Knowing the input would be of the following form: $a_1b_1a_2b_2\ldots a_nb_n$, \newline
+And that $a_1a_2\ldots a_n$ is a valid word in the language $L_1$, \newline
+And that $b_1b_2\ldots b_n$ is a valid word in the language $L_2$, \newline
+\\*
+We must somehow be capable of using the current automatas (A,B) in order to distinguish valid words from fallacious ones. \newline
+\\*
+We must be capable of reading $a_1, a_2, \ldots, a_n$ using the automata A\newline
+And accordingly $b_1, b_2, \ldots, b_n$ using the automata B \newline
+\\
+In accordance to the previous statements, it is as coherent as ever that in order for a set of states to be used in the automata to be groundly esbalished, it must be rendered cogent for the set to include not only the current case; $(q_a, q_b) \mid q_a \in Q^{A} \wedge q_b \in Q^{B}$ but also the automata using which it should next read; $(q_a, q_b, automata \mid q_a \in Q^{A} \wedge q_b \in Q^{B} \wedge (automata = A \vee automata = B))$ \newline
+\\
+Hence, $Q^{C}$ must be defined as such: $Q^{C} = Q^{A} \times Q^{B} \times \{A,B\}$ \newline
+Using our general assumption that both A and B are finite deterministic automatas, we may infer that $\lvert Q^{A} \rvert \ne \infty \wedge \lvert Q^{B} \rvert \ne \infty$. \newline
+The above is adequate for us to infer that $\lvert Q^{C} \rvert \ne \infty$ and accordingly is a cogent set to be used as the set of cases for our automata C. \newline
+\\
+Additionally, we must specify an initial state. For it is a compulsury field of the valid automata. I should like to propose the following: \newline
+$q_0^{c} \in Q^{C} \mid q_0^{C} = (q_0^{A}, q_0^{B}, A)$. \newline
+The aforementioned definition of an initial state not only imbues the two initial states corresponding with automatas A and B, but also the automata from which it should next read. (Automata A). \newline
+\\
+Having already defined a set of states composed of a defined initial state and others, we may now craft the trasitions function; ($\delta^{C}$). \newline
+\[
+  \delta^{C} ((q_n^{A}, q_m^{B}, automata), \sigma) =
+  \begin{cases}
+    (\delta^{A}(q_n^{A}, \sigma), q_m^{B}, B), & automata = A\\\\
+    (q_n^{A}, \delta^{B}(q_m^{B}, \sigma), A), & automata = B
+  \end{cases}
+\]
+\\
+We have by now defined all that is to be defined for our automata to be valid, but one thing. The set of accepted states. For a state to be adequate to be an accepted one, it must match the following form: \newline
+$F^{C} = \{q_i^{C} = (q_n^{A}, q_n^{B}, A) \in Q^{C} \mid q_n^{A} \in F^{A} \wedge q_n^{B} \in F^{B}\}$ \newline
+\\
+Using the above set of proofs I should now like to divulge that the Zigzag automata (automata C) is a finite deterministic automata.
+\end{proof}
+\end{document}
