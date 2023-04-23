@@ -412,7 +412,7 @@ Automata C: \newline
   (q_2p_1) edge [loop below] node [below] {b} ()
   ;
 \end{tikzpicture}
-\subsection{Given a finite deterministic Automata A defined the following way:} 
+\subsection{Given a finite deterministic automata A defined the following way:} 
 \begin{tikzpicture}
   \node [state, initial] (q_0) {$q_0$};
   \node [state] [right=of q_0] (q_1) {$q_1$};
@@ -446,4 +446,55 @@ $F^{C} = \{q_0, q_4\}$ \newline
 \paragraph{$\{w \in \{a,b\}^{*} \mid ((\#a_w - 1) \bmod 3) + (\#b_w \bmod 2) = 2\}$:}
 The set of accepted states must be altered to the following: \newline
 $F^{C} = \{q_0, q_5\}$ \newline
-\end{document}  
+\subsection{Given the following finite deterministic automatas A, B, C defined the following way:} 
+\subsubsection{Diagram A:}
+\begin{tikzpicture}
+  \node [state, initial] (q_0) {$q_0$};
+  \node [state] [right=of q_0] (q_1) {$q_1$};
+  \node [state, accepting] [right=of q_1] (q_2) {$q_2$};
+  \node [state] [below=of q_0] (q_3) {$q_3$};
+  \node [state, accepting] [right=of q_3] (q_4) {$q_4$};
+  \node [state] [right=of q_4] (q_5) {$q_5$};
+    \path[->]
+    (q_0) edge node [above] {a} (q_1)
+    (q_0) edge [bend right=5] node [left] {b} (q_3)
+    (q_1) edge node [above] {a} (q_2)
+    (q_1) edge [bend right=5] node [left] {b} (q_4)
+    (q_2) edge [bend right] node [above] {a} (q_0)
+    (q_2) edge [bend right=5] node [left] {b} (q_5)
+    (q_3) edge [bend right=5] node [right] {b} (q_0)
+    (q_3) edge node [above] {a} (q_4)
+    (q_4) edge [bend right=5] node [right] {b} (q_1)
+    (q_4) edge node [above] {a} (q_5)
+    (q_5) edge [bend left] node [below] {a} (q_3)
+    (q_5) edge [bend right=5] node [right] {b} (q_2)
+    ;
+\end{tikzpicture} \newline
+\\
+\subsubsection{Diagram B:}
+\begin{tikzpicture}
+  \node [state, initial] (p_0) {$p_0$};
+  \node [state, accepting] [right=of p_0] (p_1) {$p_1$};
+    \path[->]
+    (p_0) edge [loop below] node {b} ()
+    (p_0) edge [bend left=5] node [above] {a} (p_1)
+    (p_1) edge [bend left=5] node [below] {a} (p_0)
+    (p_1) edge [loop below] node {b} ()
+    ;
+\end{tikzpicture}
+\\
+\subsubsection{Diagram C:}
+\begin{tikzpicture}
+  \node [state, initial] (p_0) {$p_0$};
+  \node [state] [right=of p_0] (p_1) {$p_1$};
+    \path[->]
+    (p_0) edge [loop below] node {b} ()
+    (p_0) edge [bend left=5] node [above] {a} (p_1)
+    (p_1) edge [bend left=5] node [below] {a} (p_0)
+    (p_1) edge [loop below] node {b} ()
+    ;
+\end{tikzpicture}
+\subsection{Problem 1:}
+
+
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  22 APR 2023 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  23 APR 2023 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -529,6 +529,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 447--449
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
+
+ []
+
 [10] (./Automata.aux) ) 
 Here is how much of TeX's memory you used:
  13320 strings out of 475071
@@ -552,7 +567,7 @@ mr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 
-Output written on Automata.pdf (10 pages, 182724 bytes).
+Output written on Automata.pdf (10 pages, 186638 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
