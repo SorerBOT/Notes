@@ -3,6 +3,9 @@
 % ***********************************************************
 % Version 2
 \documentclass[12pt]{article}
+\usepackage{tikz} % draw automatas
+\usetikzlibrary{automata,positioning}
+% ***********************************************************
 \usepackage{amsmath} % AMS Math Package
 \usepackage{amsthm} % Theorem Formatting
 \usepackage{amssymb}    % Math symbols such as \mathbb
@@ -71,7 +74,7 @@
 
 
 
-\section{Automatas}
+\section{Finite Deterministic Automatas}
 \emph{Given the automata $D = (Q^{D}, \{a,b\}, \delta^{D}, q_0^{D}, F^{D})$} \newline
 \begin{p}
 \emph{\newline Imagine a new automata $E = (Q^{E}, \{a,b\}, \delta^{E}, q_0^{E}, F^{E})$} s.t:
@@ -128,5 +131,48 @@ Define:
 \end{p}
 \begin{s} \newline
   \emph{Now that $q_0^{E}$ is an accepting state, I should like for $L(E^{\prime})$ to support it. Thus, anything that happens to follow $\{b\}^{*}$ is merely optional. And hence it might be defined as such: $L(E^{\prime}) = \{b\}^{*} \cdot \{\{\epsilon\} \cup (\{a\} \cdot L(D))\}$} 
+\end{s}
+  \emph{\newline Consider the previous automata\footnote{Problem 1.1} $E = (Q^{E}, \{a,b\}, \delta^{E}, q_0^{E}, F^{E})$} \newline
+\newpage
+\section{Finite Non Deterministic Automatas}
+\begin{p}
+  \emph{\newline Build an automata to accept a language above $\{0,1\}$ where each word is terminated with a character that follows a 0.} \newline
+\end{p}
+\begin{s} \newline
+ \emph{The automata should have states, three in number, an initial one to which the automata would never appoint once departed from, one to acknowledge the preceding zero and one to halt upon receiving redundant input.} \newline
+  \\
+  \begin{tikzpicture}
+    \node [state, initial] (q_0) {$q_0$};
+    \node [state, accepting] [right=of q_0] (q_1) {$q_1$};
+    \node [state] [right=of q_1] (q_2) {$q_2$};
+      \path[->]
+      (q_0) edge [loop below] node [below] {{0,1}} ()
+      (q_0) edge node [above] {0} (q_1)
+      (q_1) edge [bend right=10] node [above=0.25] {0} (q_2)
+      (q_2) edge [bend right=10] node [below=0.25] {{0,1}} (q_1)
+      ;
+  \end{tikzpicture}
+\end{s}
+\begin{p}
+  \emph{\newline Build an automata to accept a language above $\{0,1\}$ where each word contains the string 1101.} \newline
+\end{p}
+\begin{s} \newline
+ \emph{The automata should have four states, each corresponding to a letter of the string 1101 and an additional one to process redundant input. Considering the automata not to be deterministic, it may be assumed that upon shifting from the initial state, the only characters to follow would be 101 and so on and so forth for the next characters.} \newline
+  \\
+  \begin{tikzpicture}
+    \node [state, initial] (q_0) {$q_0$};
+    \node [state] [right=of q_0] (q_1) {$q_1$};
+    \node [state] [right=of q_1] (q_2) {$q_2$};
+    \node [state] [right=of q_2] (q_3) {$q_3$};
+    \node [state, accepting] [right=of q_3] (q_4) {$q_4$};
+      \path[->]
+      (q_0) edge [loop below] node [below] {{0,1}} ()
+      (q_0) edge node [above] {1} (q_1)
+      (q_1) edge node [above] {1} (q_2)
+      (q_2) edge node [above] {0} (q_3)
+      (q_3) edge node [above] {1} (q_4)
+      (q_4) edge [loop below] node [below] {{0,1}} ()
+      ;
+  \end{tikzpicture}
 \end{s}
 \end{document}
