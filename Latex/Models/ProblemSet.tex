@@ -105,4 +105,16 @@ Define:
 \\
 \emph{Hence - I may declare that $L(A) = \{b\}^{*} \cdot \{a\} \cdot L(D)$.}
 \end{s}
+\begin{p}
+  \emph{\newline Consider the previous automata $E = (Q^{E}, \{a,b\}, \delta^{E}, q_0^{E}, F^{E})$} \newline
+  \emph{And a new automata $E^{\prime} = (Q^{E}, \{a,b\}, \delta^{E}, q_0^{D}, F^{E})$} \newline
+  \\
+  Define: 
+  \begin{itemize}
+    \item $L(E^{\prime})$
+  \end{itemize}
+\end{p}
+\begin{s} \newline
+  \emph{In the previous problem I have explained in great detail the effects caused by the declaration of a new state $q_0^{E}$ to be the initial state of E. Considering $q_0^{E}$ not to be part of $Q^{D}$, it can be seen with vividness that $\delta^{E}$, known as $E^{\prime}$'s transitions function would cease to return it as output as soon as it no longer is the current state. Therefore, knowing $E^{\prime}$ does not use $q_0^{E}$ as its initial state it is cogent that it would never be returned. Accordingly, the only circumstances relevant to the transitions function would be $q \in Q^{D}$, and thus the addition of $\{b\}^{*} \cdot \{a\}$ to the beginning of L(E) must be undone for $L(E^{\prime})$ to be precise. And hence $L(E^{\prime}) = L(D)$}
+\end{s}
 \end{document}
