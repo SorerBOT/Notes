@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  24 APR 2023 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  24 APR 2023 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -732,6 +732,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
 [6] (./ProblemSet.aux) ) 
 Here is how much of TeX's memory you used:
  14844 strings out of 475071
@@ -757,7 +762,7 @@ mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm120
 0.pfb>
-Output written on ProblemSet.pdf (6 pages, 170871 bytes).
+Output written on ProblemSet.pdf (6 pages, 171058 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
