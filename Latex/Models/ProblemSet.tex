@@ -49,7 +49,7 @@
 \providecommand{\RR}{\mathbb{R}}
 \providecommand{\NN}{\mathbb{N}}
 \providecommand{\seq}{\subseteq}
-\providecommand{\e}{\epsilon}
+\providecommand{\e}{\varepsilon}
 
 \newtheorem{prop}{Proposition}
 \newtheorem{thm}{Theorem}[section]
@@ -129,7 +129,7 @@ Define:
   \end{itemize}
 \end{p}
 \begin{s} \newline
-  \emph{Now that $q_0^{E}$ is an accepting state, I should like for $L(E^{\prime})$ to support it. Thus, anything that happens to follow $\{b\}^{*}$ is merely optional. And hence it might be defined as such: $L(E^{\prime}) = \{b\}^{*} \cdot \{\{\epsilon\} \cup (\{a\} \cdot L(D))\}$} 
+  \emph{Now that $q_0^{E}$ is an accepting state, I should like for $L(E^{\prime})$ to support it. Thus, anything that happens to follow $\{b\}^{*}$ is merely optional. And hence it might be defined as such: $L(E^{\prime}) = \{b\}^{*} \cdot \{\{\varepsilon\} \cup (\{a\} \cdot L(D))\}$} 
 \end{s}
   \emph{\newline Consider the previous automata\footnote{Problem 1.1} $E = (Q^{E}, \{a,b\}, \delta^{E}, q_0^{E}, F^{E})$} \newline
 \newpage
@@ -302,5 +302,30 @@ Define:
       (q_0q_1q_2) edge node [above] {b} (q_1q_2)
       ;
   \end{tikzpicture}
+\end{s}
+\section{Automatas with $\varepsilon$ based states}
+\emph{\newline Given the following automata A, find the set of states each call may reach:} \newline
+  \\
+  \begin{tikzpicture}
+    \node [state, initial] (q_0) {$q_0$};
+    \node [state, below=of q_0] (q_1) {$q_1$};
+    \node [state, right=of q_0] (q_2) {$q_2$};
+    \node [state, below=of q_2] (q_3) {$q_3$};
+      \path[->, -stealth] 
+      (q_0) edge node [above] {$\varepsilon$} (q_2)
+      (q_0) edge node [left] {{a,b}} (q_1)
+      (q_1) edge node [left] {{a,b}} (q_0)
+      (q_1) edge node [below] {$\varepsilon$} (q_3)
+      (q_2) edge node [right] {c} (q_3)
+      (q_3) edge node [right] {c} (q_2)
+      ;
+  \end{tikzpicture}
+\begin{p}
+\emph{What set of states would the following call reach "$\varepsilon$":} \newline
+
+
+\end{p}
+\begin{s} \newline
+  \emph{The only state to which such call may lead is $q_2$, though that is completely optional and accordingly the group of states should be $\{q_0, q_2\}.$}
 \end{s}
 \end{document}
