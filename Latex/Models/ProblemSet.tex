@@ -332,4 +332,10 @@ Define:
 \begin{s} \newline
   \emph{The states reachable considering the aforementioned input are $q_1$ and $q_3$, and accordingly the set of states is to be: $\{q_1, q_3\}$.}
 \end{s}
+\begin{p}
+\emph{What set of states would the following call reach "cac":} \newline
+\end{p}
+\begin{s} \newline
+  \emph{Considering the first character to be c, and that no path offers to process it (Respective to $q_0$), the empty character ($\varepsilon$) must be chosen. Following such path would lead us to the state of $q_2$ which in turn, after reading the first character (c) would appoint us to $q_3$. $q_3$ does not offer any path which would enable the next character to be processed, and thus the automata would fail to produce any set of states that is not empty. Accordingly, the set of states would be $\emptyset$.}
+\end{s}
 \end{document}
