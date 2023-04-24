@@ -82,7 +82,6 @@
   \item $Q^{E} = Q^{D} \cup \{q_0^{E}\}$
   \item $F^{E} = F^{D}$
   \item \(
-    \hspace{0mm}
     \delta^{E}(q, \sigma) = 
     \begin{cases}
       \delta^{D}(q, \sigma) & q \in Q^{D} \\
@@ -219,6 +218,39 @@ Define:
       (q_1) edge node [above] {{b,c}} (q_4)
       (q_2) edge node [above] {{a,c}} (q_4)
       (q_3) edge node [below] {{a,b}} (q_4)
+      ;
+  \end{tikzpicture}
+\end{s}
+\begin{p}
+  \emph{\newline Build an automata to accept the following language:} \newline
+  \(
+    L =
+    \begin{cases}
+      k \geq 1, \\
+      \forall 1 \leq i \leq k: w_i \in \{a,b\}^{+}, \\
+      \exists 1 \leq i \leq k: w_i \in \{a\}^{+}
+    \end{cases}
+  \)
+\end{p}
+\begin{s} \newline
+ \emph{The automata requires a pair of states to indicate that the string of a's has been processed, an additional state to filter redundant parts of the input, an initial state and a state to filter redundant parts at the end of the latter.} \newline
+  \\
+  \begin{tikzpicture}
+    \node [state, initial] (q_0) {$q_0$};
+    \node [state] [below=of q_0] (q_1) {$q_1$};
+    \node [state] [right=of q_0] (q_2) {$q_2$};
+    \node [state, accepting] [right=of q_2] (q_3) {$q_3$};
+    \node [state] [below=of q_3] (q_4) {$q_4$};
+      \path[->]
+      (q_0) edge [bend left] node [right] {{a,b}} (q_1)
+      (q_0) edge node [above] {a} (q_2)
+      (q_1) edge [bend left] node [left] {c} (q_0)
+      (q_1) edge [loop below] node [below] {{a,b}} ()
+      (q_2) edge [loop below] node [below] {a} ()
+      (q_2) edge node [above] {c} (q_3)
+      (q_3) edge [bend left] node [right] {{a,b}} (q_4)
+      (q_4) edge [bend left] node [left] {c} (q_3)
+      (q_4) edge [loop below] node [below] {{a,b}} ()
       ;
   \end{tikzpicture}
 \end{s}
