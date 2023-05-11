@@ -3,6 +3,9 @@
 % ***********************************************************
 % Version 2
 \documentclass[12pt]{article}
+\usepackage{tikz, calc} % draw automatas
+\usetikzlibrary{automata,positioning}
+% ***********************************************************
 \usepackage{amsmath} % AMS Math Package
 \usepackage{amsthm} % Theorem Formatting
 \usepackage{amssymb}    % Math symbols such as \mathbb
@@ -10,8 +13,6 @@
 \usepackage[dvips,letterpaper,margin=1in,bottom=0.7in]{geometry}
 \usepackage{tensor}
  % Sets margins and page size
-\usepackage{amsmath}
-
 \renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
 % \DeclareMathOperator{\Sample}{Sample}
 \let\vaccent=\v % rename builtin command \v{} to \vaccent{}
@@ -41,6 +42,7 @@
 \let\divsymb=\div % rename builtin command \div to \divsymb
 \renewcommand{\div}[1]{\gv{\nabla} \cdot \v{#1}} % for divergence
 \newcommand{\curl}[1]{\gv{\nabla} \times \v{#1}} % for curl
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}} % Quotient
 \let\baraccent=\= % rename builtin command \= to \baraccent
 \renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
 \providecommand{\wave}[1]{\v{\tilde{#1}}}
@@ -48,7 +50,7 @@
 \providecommand{\RR}{\mathbb{R}}
 \providecommand{\NN}{\mathbb{N}}
 \providecommand{\seq}{\subseteq}
-\providecommand{\e}{\epsilon}
+\providecommand{\e}{\varepsilon}
 
 \newtheorem{prop}{Proposition}
 \newtheorem{thm}{Theorem}[section]
@@ -68,24 +70,20 @@
 \begin{document}
 
 {\noindent\Huge\bf  \\[0.5\baselineskip] {\fontfamily{cmr}\selectfont  Problem Set I}         }\\[2\baselineskip] % Title
-{ {\bf \fontfamily{cmr}\selectfont Computing Models}\\ {\textit{\fontfamily{cmr}\selectfont     April 23, 2023}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    {\large \textsc{david roberts}\footnote{With Elizabeth Petrik}} % Author name
+{ {\bf \fontfamily{cmr}\selectfont Physics}\\ {\textit{\fontfamily{cmr}\selectfont     May 2, 2023}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    {\large \textsc{Alon Filler}\footnote{With $\Sigma$orer}} % Author name
 \\[1.4\baselineskip] 
-
-
-
-\section{Optical Activity and LCDs}
-\emph{Some materials have a property called "optical activity,” that is, for circularly     polarized light, their index of refraction (and therefore their wavelength in the medium) depends on whether the light is right- or left-circularly polarized. The EM waves propagating in the $+\uv{z}$ direction inside such a medium can therefore be described by}
-\[\v{E}(z,t)=E_L(\uv{x}+i\uv{y})e^{i(k_Lz-\omega t)} +E_R(\uv{x}-i\uv{y})e^{i(k_Rz-\omega t)}\tag{1}\]
-\emph{where $E_L$, $E_R$, $k_L$, and $k_R$ are the amplitudes and wavenumbers of the left- and right-handed electric field components, and $\uv{x}$ and $\uv{y}$ are the unit vectors pointing in the $+\uv{x}$- and $+\uv{y}$-direction, respectively.}
-
-\begin{p} Suppose that the incoming wave at $z = 0$ is linearly polarized in the x-direction, i.e.,
-\[\v{E}(0,t) = E_0e^{-i\omega t}\uv{x} \tag{2}\]
-Calculate $E_L$ and $E_R$.
+\section{:}
+\begin{p}
+  \emph{Calculate the velocity of the rocket when the engine failed:}
 \end{p}
-\begin{s} We evaluate (1) at $z=0$ and set the resulting expression equal to (2), hereby     solving for  $E_L$ and $E_R$:
-\begin{align*}
-\v{E}(0,t)&=E_L(\uv{x}+i\uv{y})e^{-i\omega t)} +E_R(\uv{x}-i\uv{y})e^{-i\omega t}\tag{(1) with $z=0$}\\
-&=[(E_L+E_R)\uv{x}+(E_L-E_R)i\uv{y})]e^{-i\omega t}=E_0e^{-i\omega t}\uv{x}
-\end{align*}
+\begin{s} \newline
+  \emph{Using the following equation of velocity: \newline $v(t) = v_0 + a(t - t_0)$ \newline We may determine that the velocity at said time was no other than $v(5) = v_0 + 30(5 - t_0) = 0 + 30(5 - 0) = 150_{\bigslant{m}{s^{2}}}$}
+\end{s}
+\begin{p}
+  \emph{Calculate the maximum height the rocket would reach:}
+\end{p}
+\begin{s} \newline
+  \emph{Firstly, the height reached once the engine failed must be calculated. In order to calculate the latter, one must observe the following equation: $x(t) = x_0 + v_0(t - t_0) + 0.5at^2$. Applying the equation to the scenario described, we may set $x_0 = 0, v_0 = 0, t_0 = 0, t = 5, a = 30$ and therefore: $x(5) = 0 + 0(5 - 0) + 0.5 * 30 * 5^2 = 15 * 25 = 375_{m}$ \newline Now, we may calculate the distance that the rocket travelled after the failure of the engine:\newline To do so, we must first calculate the duration of time the rocket's height resumed increasing despite the engine no longer functioning. \newline We may do so using the following system of equations: $v(t) = 0 \wedge v(t) = v_0 + a(t - t_0)$, as $v_0 = 150, a = -9.87, t_0 = 5$, therefore: $0 = 150 - 9.87(t - 5) \Longrightarrow t = 20.19$ \newline. We shall use the following equation: $x(t) = x_0 + v_0(t - t_0) + 0.5at^{2}$, we may define the parameters to suit our needs: $x_0 = 375_m, v_0 = 150_{\bigslant{m}{s^{2}}}, t_0 = 5, t = 20.19, a = -9.87 \Longrightarrow x(20.19) = 375 + 150 * (20.19 - 5) + 0.5(-9.87)(15.19)^2 = 1514.8173465$}
+
 \end{s}
 \end{document}

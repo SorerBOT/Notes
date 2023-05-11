@@ -1,0 +1,119 @@
+% ***********************************************************
+% ******************* PHYSICS HEADER ************************
+% ***********************************************************
+% Version 2
+\documentclass[12pt]{article}
+\usepackage{tikz, calc} % draw automatas
+\usetikzlibrary{automata,positioning}
+% ***********************************************************
+\usepackage{amsmath} % AMS Math Package
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{amssymb}    % Math symbols such as \mathbb
+\usepackage{graphicx} % Allows for eps images
+\usepackage[dvips,letterpaper,margin=1in,bottom=0.7in]{geometry}
+\usepackage{tensor}
+ % Sets margins and page size
+\renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
+% \DeclareMathOperator{\Sample}{Sample}
+\let\vaccent=\v % rename builtin command \v{} to \vaccent{}
+\usepackage{enumerate}
+\renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}} % for vectors
+\newcommand{\gv}[1]{\ensuremath{\mbox{\boldmath$ #1 $}}} 
+% for vectors of Greek letters
+\newcommand{\uv}[1]{\ensuremath{\mathbf{\hat{#1}}}} % for unit vector
+\newcommand{\abs}[1]{\left| #1 \right|} % for absolute value
+\newcommand{\avg}[1]{\left< #1 \right>} % for average
+\let\underdot=\d % rename builtin command \d{} to \underdot{}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}} % for derivatives
+\newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}} % for double derivatives
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} 
+% for partial derivatives
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} 
+% for double partial derivatives
+\newcommand{\pdc}[3]{\left( \frac{\partial #1}{\partial #2}
+ \right)_{#3}} % for thermodynamic partial derivatives
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right|
+ \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+\newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right|
+ #2 \left| #3 \vphantom{#1#2} \right>} % for Dirac matrix elements
+\newcommand{\grad}[1]{\gv{\nabla} #1} % for gradient
+\let\divsymb=\div % rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\gv{\nabla} \cdot \v{#1}} % for divergence
+\newcommand{\curl}[1]{\gv{\nabla} \times \v{#1}} % for curl
+\let\baraccent=\= % rename builtin command \= to \baraccent
+\renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
+\providecommand{\wave}[1]{\v{\tilde{#1}}}
+\providecommand{\fr}{\frac}
+\providecommand{\RR}{\mathbb{R}}
+\providecommand{\NN}{\mathbb{N}}
+\providecommand{\seq}{\subseteq}
+\providecommand{\e}{\varepsilon}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{p}{Problem}[section]
+\usepackage{cancel}
+\newtheorem*{lem}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{dfn}{Definition}
+ \newenvironment{s}{%\small%
+        \begin{trivlist} \item \textbf{Solution}. }{%
+            \hspace*{\fill} $\blacksquare$\end{trivlist}}%
+% ***********************************************************
+% ********************** END HEADER *************************
+% ***********************************************************
+
+\begin{document}
+
+{\noindent\Huge\bf  \\[0.5\baselineskip] {\fontfamily{cmr}\selectfont  Problem Set I}         }\\[2\baselineskip] % Title
+{ {\bf \fontfamily{cmr}\selectfont Computing Models}\\ {\textit{\fontfamily{cmr}\selectfont     April 23, 2023}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    {\large \textsc{Alon Filler}\footnote{With $\Sigma$orer}} % Author name
+\\[1.4\baselineskip] 
+
+\section{Regular Language Proof}
+\begin{p}
+\emph{\newline Let $L_1, L_2$ be regular languages. \newline Prove the following language ($L_3$) to be a regular language: \newline $L_3 = \{w_1w_2w_3 \mid w_1, w_3 \in L_1, w_2 \in L_2\}$.}
+\end{p}
+\begin{s} \newline
+  \emph{Considering $L_1, L_2$ to be regular languages, declare A, B as the finite deterministic automatas which accept them correspondingly. I should like to define an additional automata to accept $A^{\prime} \mid L(A^{\prime}) = L_1$} \newline
+\\
+  \emph{A, B and $A^{\prime}$ may be defined more rigorously as such:} \newline
+\emph{$A = \{Q^{A}, \Sigma,\delta^{A}, q_0^{A} ,F^{A}\}$} \newline
+\emph{$B = \{Q^{B}, \Sigma,\delta^{B}, q_0^{B} ,F^{B}\}$} \newline
+  \emph{$A = \{Q^{A^{\prime}}, \Sigma,\delta^{A^{\prime}}, q_0^{A^{\prime}} ,F^{A^{\prime}}\}$.} \newline
+\\
+\emph{In order to prove a language to be regular, one must craft a finite, deterministic, automata to accept it.} \newline
+\\
+\emph{Let there be a new automata $C = \{Q^{C}, \Sigma, \Delta^{C}, q_0^{C}, F^{C}\}$.} \newline 
+\\
+  \emph{We must now utilise the previously defined automatas A, B and $A^{\prime}$ in order to read $w_1$, $w_2$ and $w_3$ correspondingly.} \newline
+  \emph{$w_1, w_2$ and $w_3$ will be read in the following manner; $w_1$ will be read using automata A, then upon having found itself admitted by the aforementioned automata an $\varepsilon$ node path would relate it to the initial state of automata B. Once it had reached an accepting state of automata B, it would be push enable to proceed to automata $A^{\prime}$'s initial state and repeat the discussed process.} \newline
+\\
+  \emph{For the above reason, it is cogent that the set states $Q^{C}$ would be constructed the following way: $Q^{C} = Q^{A} \cup Q^{B} \cup Q^{A^{\prime}}$} \newline
+\\
+  \emph{Considering A, B and $A^{\prime}$ to be finite deterministic automatas it may be inferred that their corresponding sets of states are finite. Accordingly, their union too shall be finite, and hence it may be declared that $\lvert Q^{C} \rvert \ne \infty$.} \newline
+\\
+\emph{Now that a set of states is established I should like to define the initial state as such: $q_0^{C} \in Q^{C} \mid q_0^{C} = q_0^{A}$.} \newline
+\\
+\emph{Furthermore, I should like to establish the set of accepting states s.t: $F^{C} = F^{A^{\prime}}$.} \newline
+\\
+  \emph{As the final stage of the establishment of automata C, we must define an applicable transitions function.} \newline
+\\
+  \(
+    \forall q \in Q^{C} \sigma \in \Sigma: \Delta^{C}(q, \sigma) =
+    \begin{cases}
+      \{\delta^{A}(q, \sigma)\}, & q \in Q^{A} \\
+      \{q_0^{B}\}, & q \in F^{A} \\
+      \{\delta^{B}(q, \sigma)\}, & q \in Q^{B} \\
+      \{q_0^{A^{\prime}}\}, & q \in F^{B} \\
+      \{\delta^{A^{\prime}}(q, \sigma)\}, & q \in Q^{A^{\prime}} \\
+    \end{cases}
+  \)
+\newline
+\\
+\\
+\emph{To conclude, we have successfully designed an automata (C) s.t it is of every imminent trait required for an automata to be declared finite, and using a proof divulged formerly in the course, I should like to state that a claim that the latter automata, (C) - may be turned deterministic with an ease is of no fallaciousness. And hencefully I embrace this moment of time as I declare $L_3$ a regular language.}
+\end{s}
+\end{document}
