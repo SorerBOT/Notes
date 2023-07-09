@@ -303,6 +303,17 @@
     \end{NiceArray} \right)
   \]
   \\
+  $\xRightarrow{\text{$R_1 = R_1 / 6, R_2 = R_2 / (-3)$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 0  & 0  & -5 \\
+      0 & 1 & 0 & 8 \\
+      0 & 0  & 1  & -1  \\
+    \end{NiceArray} \right)
+  \]
+  \\
   $\xRightarrow{\text{Display as System of Equations}}$
   \\
   \[
@@ -331,6 +342,156 @@
     y & = & 8 \\ 
     z & = & -1 \\
     \end{array}
+  \]
+\end{s}
+\begin{p}
+  \emph{Given the following System of Equations, determine for which $a$ values the System has one solution, no solutions or an infinite amount of solutions:} \\
+
+  \[
+    \begin{array}{lcl} 
+    x + y + az & = & 1 \\
+    x + ay + z & = & 1 \\
+    ax + y + z & = & 1  
+    \end{array}
+  \]
+\end{p}
+\begin{s} \newline \\
+  $\xRightarrow{\text{Display as Matrix}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 1 & a & 1 \\
+      1 & a & 1  & 1 \\
+      a & 1 & 1  & 1 \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  
+  $\xRightarrow{\text{$R_2$ = $R_2$ - $R_1$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 1 & a & 1 \\
+      0 & a - 1 & 1 - a & 0 \\
+      a & 1 & 1  & 1 \\
+    \end{NiceArray} \right)
+  \]
+  \\
+
+  $\xRightarrow{\text{$R_3$ = $R_3$ - a * $R_1$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 1 & a & 1 \\
+      0 & a - 1 & 1 - a & 0 \\
+      0 & 1 - a & 1 - a^2 & 1 - a \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{$R_3$ = $R_3$ + $R_2$}}$
+  \\
+
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 1     & a             & 1 \\
+      0 & a - 1 & 1 - a         & 0 \\
+      0 & 0     & -(a-1)(a+2) & 1 - a \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  \\
+  $\xRightarrow{\text{Testing Edge Cases:}}$ \\
+  \\
+  \begin{equation}
+    \begin{cases}
+      a = 1 \Rightarrow - (1-1)(1+2) = 1 - 1 \Rightarrow 0 = 0 \Rightarrow x,y,z \in \mathbb{R} \\
+      a = 2 \Rightarrow - (-2-1)(-2+2) = 1 - (-2) \Rightarrow 0 = 3 \Rightarrow x,y,z \notin \mathbb{R} \\
+    
+    \end{cases}\
+  \end{equation}
+  \\
+  \emph{Now, assuming a $\neq$ 1,-2 let us find general solutions} \\
+  $\xRightarrow{\text{$R_1$ = $R_1$ - $ \frac{1}{a - 1} R_2$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 0     & a + 1         & 1 \\
+      0 & a - 1 & 1 - a         & 0 \\
+      0 & 0     & -a^{2} - a + 2 & 1 - a \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{$R_1$ = $R_1$ - $ \frac{a + 1}{-a^2 - a + 2} R_3$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 0     & 0                  & 1 - \frac{1-a^2}{-a^2 - a + 2} \\
+      0 & a - 1 & 1 - a              & 0     \\
+      0 & 0     & -a^{2} - a + 2     & 1 - a \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{$R_2$ = $R_2$ - $ \frac{1 - a}{-a^2 - a + 2} R_3$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      1 & 0     & 0             & \frac{1}{a + 2} \\
+      0 & a - 1 & 0             & - \frac{(1 - a)^2}{-a^2 - a + 2}     \\
+      0 & 0     & -a^2 - a + 2  & 1 - a \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{Display as System of Equations}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    x & = & \frac{1}{a + 2} \\
+    (a - 1)y & = & - \frac{(1 - a)^2}{-a^2 - a + 2} \\
+    (-a^2 - a + 2)z & = & 1 - a  
+    \end{array}
+  \]
+  $\xRightarrow{\text{(2): /:(a - 1)}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    x & = & \frac{1}{a + 2} \\
+    y & = & - \frac{(1 - a)}{-a^2 - a + 2} \\
+    (-a^2 - a + 2)z & = & 1 - a  
+    \end{array}
+  \]
+  $\xRightarrow{\text{(3): /:(-$a^2$ - a + 2), (2): finding roots}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    x & = & \frac{1}{a+2} \\
+    y & = & \frac{1}{a+2} \\
+    z & = & \frac{1}{a+2}  
+    \end{array}
+  \]
+
+  $\xRightarrow{\text{z = -y}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    x & = & \frac{1}{a + 2} \\
+    y & = & - \frac{1}{a+2} \\
+    z & = & -y  
+    \end{array}
+  \]
+  \\
+  \emph{And hence the solution is:} \\
+  \[
+    \begin{pmatrix}
+      \frac{1}{a+2} \\
+      \frac{1}{a+2} \\
+      \frac{1}{a+2}
+    \end{pmatrix}
   \]
 \end{s}
 \end{document}
