@@ -13,6 +13,7 @@
 \usepackage[dvips,letterpaper,margin=1in,bottom=0.7in]{geometry}
 \usepackage{tensor}
 \usepackage{mathtools}
+\usepackage{nicematrix}
  % Sets margins and page size
 \renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
 % \DeclareMathOperator{\Sample}{Sample}
@@ -211,10 +212,125 @@
   \\
 \end{s}
 \begin{p}
-  \emph{Calculate the maximum height the rocket would reach:}
+  \emph{Solve the System of Equations above $\mathbb{R}$:} \\
+  \\
+  \[
+    \begin{array}{lcl} 
+    2x +7y + 13z & = & 33 \\ 
+    2x + 4y + 7z & = & 15 \\ 
+    1x + 2y + 4z & = & 7 \\
+    \end{array}
+  \]
 \end{p}
-\begin{s} \newline
-  \emph{Firstly, the height reached once the engine failed must be calculated. In order to calculate the latter, one must observe the following equation: $x(t) = x_0 + v_0(t - t_0) + 0.5at^2$. Applying the equation to the scenario described, we may set $x_0 = 0, v_0 = 0, t_0 = 0, t = 5, a = 30$ and therefore: $x(5) = 0 + 0(5 - 0) + 0.5 * 30 * 5^2 = 15 * 25 = 375_{m}$ \newline Now, we may calculate the distance that the rocket travelled after the failure of the engine:\newline To do so, we must first calculate the duration of time the rocket's height resumed increasing despite the engine no longer functioning. \newline We may do so using the following system of equations: $v(t) = 0 \wedge v(t) = v_0 + a(t - t_0)$, as $v_0 = 150, a = -9.87, t_0 = 5$, therefore: $0 = 150 - 9.87(t - 5) \Longrightarrow t = 20.19$ \newline. We shall use the following equation: $x(t) = x_0 + v_0(t - t_0) + 0.5at^{2}$, we may define the parameters to suit our needs: $x_0 = 375_m, v_0 = 150_{\bigslant{m}{s^{2}}}, t_0 = 5, t = 20.19, a = -9.87 \Longrightarrow x(20.19) = 375 + 150 * (20.19 - 5) + 0.5(-9.87)(15.19)^2 = 1514.8173465$}
+\begin{s} \newline \\
+  $\xRightarrow{\text{Display as Matrix}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      2 & 7 & 13 & 33 \\
+      2 & 4 & 7  & 15 \\
+      1 & 2 & 4  & 7 \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{$R_2 = R_2 - R_1$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      2 & 7  & 13 & 33  \\
+      0 & -3 & -6 & -18 \\
+      1 & 2  & 4  & 7   \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{$R_3 = 2 * R_3 - R_1$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      2 & 7  & 13 & 33  \\
+      0 & -3 & -6 & -18 \\
+      0 & -3 & -5 & -19 \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{$R_3 = R_3 - R_2$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      2 & 7  & 13 & 33  \\
+      0 & -3 & -6 & -18 \\
+      0 & 0  & 1  & -1  \\
+    \end{NiceArray} \right)
+  \]
+  \\
 
+  $\xRightarrow{\text{$R_1 = 3 * R_1 + 7 * R_2$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      6 & 0  & -3 & -27  \\
+      0 & -3 & -6 & -18 \\
+      0 & 0  & 1  & -1  \\
+    \end{NiceArray} \right)
+  \]
+  \\
+
+  $\xRightarrow{\text{$R_1 = R_1 + 3 * R_3$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      6 & 0  & 0  & -30 \\
+      0 & -3 & -6 & -18 \\
+      0 & 0  & 1  & -1  \\
+    \end{NiceArray} \right)
+  \]
+  \\
+
+  $\xRightarrow{\text{$R_2 = R_2 + 6 * R_3$}}$
+  \\
+     
+  \[
+    \left(\begin{NiceArray}{ccc|c}
+      6 & 0  & 0  & -30 \\
+      0 & -3 & 0 & -24 \\
+      0 & 0  & 1  & -1  \\
+    \end{NiceArray} \right)
+  \]
+  \\
+  $\xRightarrow{\text{Display as System of Equations}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    2x +7y + 13z & = & 33 \\ 
+    -3y + -6z & = & -18 \\ 
+    1z & = & -1 \\
+    \end{array}
+  \]
+  \\
+  $\xRightarrow{\text{z = -1}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    2x +7y + 13z & = & 33 \\ 
+    y & = & 8 \\ 
+    z & = & -1 \\
+    \end{array}
+  \]
+  \\
+  $\xRightarrow{\text{y = 8, z = -1}}$
+  \\
+  \[
+    \begin{array}{lcl} 
+    x & = & -5 \\ 
+    y & = & 8 \\ 
+    z & = & -1 \\
+    \end{array}
+  \]
 \end{s}
 \end{document}

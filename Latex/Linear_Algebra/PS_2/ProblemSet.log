@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  9 JUL 2023 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  9 JUL 2023 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -536,54 +536,134 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \xmathstrut@box=\box84
 \xmathstrut@dim=\dimen275
 )
+(/usr/local/texlive/2022/texmf-dist/tex/latex/nicematrix/nicematrix.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-09-28 L3 programming layer (loader) 
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count299
+\l__pdf_internal_box=\box85
+))
+Package: l3keys2e 2022-06-22 LaTeX2e option processing using LaTeX3 keys
+)
+Package: nicematrix 2022/10/06 v6.13b Enhanced arrays with the help of PGF/TikZ
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen276
+\ar@mcellbox=\box86
+\extrarowheight=\dimen277
+\NC@list=\toks46
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box87
+)
+\g__nicematrix_env_int=\count300
+\g__nicematrix_NiceMatrixBlock_int=\count301
+\l__nicematrix_note_in_caption_int=\count302
+\l__nicematrix_columns_width_dim=\dimen278
+\l__nicematrix_col_width_dim=\dimen279
+\g__nicematrix_row_total_int=\count303
+\g__nicematrix_col_total_int=\count304
+\g__nicematrix_last_row_node_int=\count305
+\l__nicematrix_key_nb_rows_int=\count306
+\g__nicematrix_blocks_wd_dim=\dimen280
+\g__nicematrix_blocks_ht_dim=\dimen281
+\g__nicematrix_blocks_dp_dim=\dimen282
+\l__nicematrix_width_dim=\dimen283
+\l__nicematrix_tabular_width_dim=\dimen284
+\l__nicematrix_rule_width_dim=\dimen285
+\l__nicematrix_old_iRow_int=\count307
+\l__nicematrix_old_jCol_int=\count308
+\g__nicematrix_total_X_weight_int=\count309
+\l__nicematrix_X_columns_dim=\dimen286
+\l__nicematrix_x_initial_dim=\dimen287
+\l__nicematrix_y_initial_dim=\dimen288
+\l__nicematrix_x_final_dim=\dimen289
+\l__nicematrix_y_final_dim=\dimen290
+\l__nicematrix_tmpc_dim=\dimen291
+\l__nicematrix_tmpd_dim=\dimen292
+\g__nicematrix_width_last_col_dim=\dimen293
+\g__nicematrix_width_first_col_dim=\dimen294
+\l__nicematrix_row_min_int=\count310
+\l__nicematrix_row_max_int=\count311
+\l__nicematrix_col_min_int=\count312
+\l__nicematrix_col_max_int=\count313
+\g__nicematrix_static_num_of_col_int=\count314
+\l__nicematrix_rounded_corners_dim=\dimen295
+\l__nicematrix_line_width_dim=\dimen296
+\g__nicematrix_block_box_int=\count315
+\l__nicematrix_submatrix_extra_height_dim=\dimen297
+\l__nicematrix_submatrix_left_xshift_dim=\dimen298
+\l__nicematrix_submatrix_right_xshift_dim=\dimen299
+\l__nicematrix_first_row_int=\count316
+\l__nicematrix_first_col_int=\count317
+\l__nicematrix_last_row_int=\count318
+\l__nicematrix_last_col_int=\count319
+\c@tabularnote=\count320
+\c@nicematrix_draft=\count321
+\l__nicematrix_cell_space_top_limit_dim=\dimen300
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen301
+\l__nicematrix_xdots_inter_dim=\dimen302
+\l__nicematrix_xdots_shorten_start_dim=\dimen303
+\l__nicematrix_xdots_shorten_end_dim=\dimen304
+\l__nicematrix_xdots_radius_dim=\dimen305
+\l__nicematrix_notes_above_space_dim=\dimen306
+\l__nicematrix_left_margin_dim=\dimen307
+\l__nicematrix_right_margin_dim=\dimen308
+\l__nicematrix_extra_left_margin_dim=\dimen309
+\l__nicematrix_extra_right_margin_dim=\dimen310
+\c__nicematrix_max_l_dim=\dimen311
+\l__nicematrix_position_int=\count322
+\l__nicematrix_start_int=\count323
+\l__nicematrix_multiplicity_int=\count324
+\l__nicematrix_brace_yshift_dim=\dimen312
+)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks46
+\@enLab=\toks47
 )
-\c@prop=\count299
-\c@thm=\count300
-\c@axiom=\count301
-\c@p=\count302
+\c@prop=\count325
+\c@thm=\count326
+\c@axiom=\count327
+\c@p=\count328
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
-(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count303
-\l__pdf_internal_box=\box85
-)
 (./ProblemSet.aux)
 \openout1 = `ProblemSet.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
 
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen276
-\scratchbox=\box86
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen277
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count329
+\scratchdimen=\dimen313
+\scratchbox=\box88
+\nofMPsegments=\count330
+\nofMParguments=\count331
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen314
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
+\everyMPtoPDFconversion=\toks49
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -626,33 +706,33 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 73--76
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
 
@@ -661,39 +741,146 @@ Non-PDF special ignored!
 <special> papersize=614.295pt,794.96999pt
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-[2] [3] (./ProblemSet.aux) ) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
+
+ []
+
+\g__nicematrix_max_cell_width_dim=\dimen315
+\c@iRow=\count335
+\c@jCol=\count336
+\l__nicematrix_cell_box=\box89
+\l__nicematrix_the_array_box=\box90
+\l__nicematrix_left_delim_dim=\dimen316
+\l__nicematrix_right_delim_dim=\dimen317
+\g__nicematrix_dp_row_zero_dim=\dimen318
+\g__nicematrix_ht_row_zero_dim=\dimen319
+\g__nicematrix_ht_row_one_dim=\dimen320
+\g__nicematrix_dp_ante_last_row_dim=\dimen321
+\g__nicematrix_ht_last_row_dim=\dimen322
+\g__nicematrix_dp_last_row_dim=\dimen323
+\g__nicematrix_ddots_int=\count337
+\g__nicematrix_iddots_int=\count338
+\g__nicematrix_delta_x_one_dim=\dimen324
+\g__nicematrix_delta_y_one_dim=\dimen325
+\g__nicematrix_delta_x_two_dim=\dimen326
+\g__nicematrix_delta_y_two_dim=\dimen327
+\l__nicematrix_initial_i_int=\count339
+\l__nicematrix_initial_j_int=\count340
+\l__nicematrix_final_i_int=\count341
+\l__nicematrix_final_j_int=\count342
+\l__nicematrix_end_int=\count343
+\l__nicematrix_local_start_int=\count344
+\l__nicematrix_local_end_int=\count345
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--239
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 280--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--318
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--328
+
+ []
+
+[4] (./ProblemSet.aux) ) 
 Here is how much of TeX's memory you used:
- 15123 strings out of 475071
- 310671 string characters out of 5778915
- 656973 words of memory out of 5000000
- 36260 multiletter control sequences out of 15000+600000
+ 19138 strings out of 475071
+ 422785 string characters out of 5778915
+ 771023 words of memory out of 5000000
+ 40263 multiletter control sequences out of 15000+600000
  479315 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,13n,104p,1157b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
+ 100i,13n,104p,428b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on ProblemSet.pdf (3 pages, 158305 bytes).
+Output written on ProblemSet.pdf (4 pages, 158210 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
